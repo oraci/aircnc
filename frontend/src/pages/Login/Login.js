@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import api from '../../services/api';
 
-const Login = () => {
+const Login = ({history}) => {
   const [email, setEmail] = useState('');
 
   async function handleSubmit(e) {
@@ -11,10 +11,12 @@ const Login = () => {
 
     const {_id} = response.data;
     localStorage.setItem('user', _id);
+
+    history.push('/dashboard');
   }
 
   return (
-    <div className="content">
+    <>
       <p>
         Ofereça <strong>spots</strong> para programadores e encontre <strong>talentos</strong> para sua empresa
       </p>
@@ -31,7 +33,7 @@ const Login = () => {
 
         <button className="btn" type="submit">Entrar</button>
       </form>
-    </div>    
+    </>
   )
 };
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import logo from './assets/logo.svg';
 
@@ -9,7 +9,9 @@ function App() {
     <div className="container">
       <img src={logo} alt="Aircnc"/>
 
-      <Routes />
+      <div className="content">
+        <Routes />
+      </div>
     </div>
   );
 }
